@@ -1,0 +1,33 @@
+# .gitignore для Python проектов
+
+# Python Bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Переменные окружения
+.env
+.venv/
+venv/
+ENV/
+
+# Папки с настройками IDE
+.idea/
+.vscode/
+
+# Прочие временные файлы
+*.log
+*.bak
+*.swp
+
+# Папки для тестирования
+.tox/
+.nox/
+.coverage
+.hypothesis/
+.pytest_cache/
+
+# Файлы с базой данных
+*.sqlite3
+*.db
