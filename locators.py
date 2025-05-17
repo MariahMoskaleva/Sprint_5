@@ -6,6 +6,7 @@ class CommonLocators:
     PLACE_AD_BUTTON = (By.XPATH, "//button[text()='Разместить объявление']")
     USER_AVATAR = (By.CSS_SELECTOR, "button.circleSmall")
     USER_NAME = (By.XPATH, "//*[contains(text(), 'User.')]")
+    LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти']")
 
 
 class RegistrationPageLocators:
@@ -37,8 +38,13 @@ class AdCreationLocators:
     NAME_OF_GOOD_INPUT = (By.NAME, "name")
     DESCRIPTION_TEXTAREA = (By.XPATH, "//textarea[@name='description' and @placeholder='Описание товара']")
     PRICE_INPUT = (By.NAME, "price")
-    ARROW_BUTTON_DROPDOWN_CATEGORY = (By.CLASS_NAME, "dropDownMenu_arrowDown__pfGL1")
+    ARROW_BUTTON_DROPDOWN_CATEGORY = (By.XPATH, "//div[contains(@class, 'dropDownMenu_input__itKtw')][.//input["
+                                                "@name='category']]//button[contains(@class, "
+                                                "'dropDownMenu_arrowDown')]")
     HOBBY_BUTTON = (By.XPATH, "//button[.//span[text()='Хобби']]")
-    ARROW_BUTTON_DROPDOWN_CITY = (By.CSS_SELECTOR, "button.dropDownMenu_arrowDown__pfGL1")
+    ARROW_BUTTON_DROPDOWN_CITY = (By.XPATH, "//div[contains(@class, 'dropDownMenu_input__itKtw')][.//input["
+                                            "@name='city']]//button[contains(@class, 'dropDownMenu_arrowDown')]"
+)
+    NOVOSIBIRSK_BUTTON = (By.XPATH, "//button[.//span[text()='Новосибирск']]")
     CONDITION_RADIOBUTTON = (By.XPATH, "//div[contains(@class, 'radioUnput_inputRegular__')]")
     PUBLISH_BUTTON = (By.XPATH, "//button[text()='Опубликовать']")

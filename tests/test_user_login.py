@@ -37,14 +37,11 @@ def test_register_and_login(driver):
     wait.until(EC.visibility_of_element_located(RegistrationPageLocators.EMAIL_INPUT)).send_keys(email)
     driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys(password)
 
-    element = driver.find_element(*CommonLocators.LOGIN_REGISTER_BUTTON)
-    driver.execute_script("arguments[0].click();", element)
+    login_button = driver.find_element(*CommonLocators.LOGIN_BUTTON)
+    wait.until(EC.element_to_be_clickable(CommonLocators.LOGIN_BUTTON))
+    login_button.click()
 
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located(CommonLocators.PLACE_AD_BUTTON)
+    avatar = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(CommonLocators.USER_AVATAR)
     )
-
-    WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located(CommonLocators.USER_AVATAR)
-    )
-    assert driver.find_element(CommonLocators.LOGIN_REGISTER_BUTTON).is_displayed()
+    assert avatar.is_displayed()
